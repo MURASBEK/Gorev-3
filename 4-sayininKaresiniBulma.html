@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayinin karesini hesaplayan uygulama</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container{
+            background-color: #444;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            color: #fff;
+            gap: 10px;
+            width: 300px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+
+        }
+        label{
+            margin-bottom: 5px;
+        }
+
+        input{
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: none;
+        }
+
+        button{
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #218838;
+        }
+        #karesi{
+            font-weight: bold;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label>
+            Sayı:
+            <input type="number" id="sayi">
+        </label>
+        <button onclick="hesapla()">Hesapla</button>
+        <label>
+            Karesi:
+            <input type="number" id="karesi" disabled>
+        </label>
+    </div>
+
+    <script>
+        function hesapla(){
+            const sayi = document.getElementById("sayi").value;
+            if (sayi === "") {
+                alert("siliconmadeacademy.com web sitesinin mesajı \nBilgilerinizi kontrol ediniz.")
+            }else{
+                const karesi = sayi * sayi;
+                document.getElementById("karesi").value = karesi;
+            }
+            
+        }
+    </script>
+</body>
+</html>

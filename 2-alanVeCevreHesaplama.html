@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan ve çevre hesaplama</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container{
+            padding: 20px;
+            background-color: #444;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td{
+            padding: 10px;
+        }
+        input{
+            width: 100%;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+        button{
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover{
+            background-color: #218838;
+        }
+        #alan, #cevre{
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td><label for="kisaKenar">Kısa kenar:</label></td>
+                <td><input type="number" id="kisaKenar"></td>
+            </tr>
+            <tr>
+                <td><label for="uzunKenar">Uzun kenar:</label></td>
+                <td><input type="number" id="uzunKenar"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick="hesapla()">Hesapla</button></td>
+            </tr>
+            <tr>
+                <td><label for="alan">Alan:</label></td>
+                <td><input  id="alan" type="number" disabled ></td>
+            </tr>
+            <tr>
+                <td><label for="cevre">Çevre:</label></td>
+                <td><input type="text" id="cevre" disabled readonly></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function hesapla(){
+            let kisaKenar = document.getElementById("kisaKenar").value;
+            let uzunKenar = document.getElementById("uzunKenar").value;
+
+            if(kisaKenar === "" || uzunKenar === ""){
+                alert("siliconmadeacademy.com web sitesinin mesajı \nBilgilerinizi kontrol ediniz.")
+            }else{
+                let alan = Number(kisaKenar) * Number(uzunKenar);
+                let cevre = 2 * (Number(kisaKenar) + Number(uzunKenar));
+                document.getElementById("alan").value = alan;
+                document.getElementById("cevre").value = cevre;
+            }
+        }
+    </script>
+</body>
+</html>

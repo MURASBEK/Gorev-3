@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X ve Y değerlerinin kareleri farkı</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container{
+            background-color: #444;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            color: #fff;
+            gap: 10px;
+            width: 500px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+        }
+        label{
+            margin-bottom: 5px;
+        }
+
+        input{
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: none;
+        }
+
+        button{
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #218838;
+        }
+        #sonuc{
+            font-weight: bold;
+            margin-top: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label>
+            X:
+            <input type="number" id="x">
+        </label>
+
+        <label>
+            Y:
+            <input type="number" id="y">
+        </label>
+
+        <button onclick="hesapla()">Hesapla</button>
+
+        <label>
+            X ve Y değerlerinin kareleri farkı:
+            <input type="number" id="sonuc" disabled>
+        </label>
+    </div>
+
+    <script>
+        function hesapla(){
+            let x = document.getElementById("x").value;
+            let y = document.getElementById("y").value;
+            if(x === "" || y === ""){
+                alert("siliconmadeacademy.com web sitesinin mesajı \nBilgilerinizi kontrol ediniz.")
+            }else{
+                let sonuc = (x * x) - (y * y);
+                document.getElementById("sonuc").value = sonuc;
+          }
+        }
+        
+    </script>
+</body>
+</html>

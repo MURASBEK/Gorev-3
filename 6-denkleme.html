@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        width: 320px;
+        gap: 10px;
+      }
+
+      label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      input{
+        margin-bottom: 15px;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease;
+        margin-bottom: 10px;
+      }
+
+      button:hover {
+        background-color: #218838;
+      }
+
+      button:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <label>
+        a:
+        <input type="number" id="a" />
+      </label>
+      <label>
+        b:
+        <input type="number" id="b" />
+      </label>
+      <label>
+        c:
+        <input type="number" id="c" />
+      </label>
+      <button onclick="hesapla()">Hesapla</button>
+      <label>
+        2b - 4ac =
+        <input type="number" id="sonuc" disabled />
+      </label>
+    </div>
+    <script>
+        function hesapla(){
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+            let c = document.getElementById("c").value;
+            if(a === "" || b === "" || c === ""){
+                alert("siliconmadeacademy.com web sitesinin mesajı \nBilgilerinizi kontrol ediniz.")
+            }else{
+                let sonuc =  2 * b - 4 * a * c;;
+        document.getElementById("sonuc").value = sonuc;
+            }
+        }
+    </script>
+  </body>
+</html>
